@@ -63,3 +63,5 @@ function NewEnlist({ memberId, onAddGame }) {
         </form>
     )
 }
+
+export default NewEnlist;

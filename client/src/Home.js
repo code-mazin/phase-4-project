@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import NewMember from "./NewMember";
 
 function Home() {
-    const [member, setMember] = useState([]);
+    const [members, setMembers] = useState([]);
     const [games, setGames] = useState([]);
 
     useEffect(() => {
@@ -15,10 +15,10 @@ function Home() {
     useEffect(() => {
         fetch("/members")
             .then((r) => r.json())
-            .then(setMember);
+            .then(setMembers);
     }, []);
 
-    function handleAddMember(NewMember) {
+    function handleAddMember(newMember) {
         setMembers((members) => [...members, newMember]);
     }
 

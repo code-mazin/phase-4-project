@@ -20,8 +20,8 @@ function NewMember({ onAddMember }) {
         }).then((r) => {
             if (r.ok) {
                 r.json().then((member) => {
-                    setName(""),
-                    setAge(""),
+                    setName("");
+                    setAge("");
                     setErrors([]);
                     onAddMember(member);
                 });
