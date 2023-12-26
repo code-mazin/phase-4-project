@@ -37,7 +37,7 @@ class MembersController < ApplicationController
         render json: { error: "Member not found" }, status: :not_found
     end
     
-    def render_unprocessable_entity_response(exceprion)
+    def render_unprocessable_entity_response(exception)
         render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
     end
 

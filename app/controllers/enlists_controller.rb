@@ -1,9 +1,9 @@
 class EnlistsController < ApplicationController
-    rescue_from ActiveRecord::RecordInvalid, with :render_unprocessable_entity_response
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
     def create
         enlist = Enlist.create!(enlist_params)
-        render json: enlist.activity, status: :created
+        render json: enlist.game, status: :created
     end
 
     private
@@ -13,6 +13,6 @@ class EnlistsController < ApplicationController
     end
 
     def render_unprocessable_entity_response(exception)
-        render json: {errors: exception.record.errors.full_messages }, status: :unprocessable_entity
+        render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
     end
 end
